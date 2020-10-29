@@ -7,7 +7,8 @@ tags:
   - Machine Learning
 excerpt: In this post I will explain how to setup XNect and run the demo provided in the example
 comments: false
-
+category: 
+  - Projects
 ---
 
 In this Post I will show how to install XNect and Run the demo provided in example

@@ -4,7 +4,7 @@ highlighter:      rouge
 
 # Setup
 title:            Anil Kunchala
-description:      'Just a <i> Tinkerers </i> log about his experiments with few things '
+description:      'a <i> Tinkerers </i> log about his experiments with few things '
 url:              https://anilkunchalaece.github.io
 
 author:
@@ -14,6 +14,8 @@ author:
 paginate:         5
 # paginate_path:    '/page:num'
                     # Or '/blog/page:num' if you want to move your index pages
+
+disqus.shortname: 'anil'
 
 plugins:
   - jekyll-feed
