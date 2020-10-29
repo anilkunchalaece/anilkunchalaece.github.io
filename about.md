@@ -5,7 +5,11 @@ sidebar_link: true
 ---
 <img style="float: right; width:170px;" class="img-thumbnail" src="https://avatars3.githubusercontent.com/u/17523245">
 
-Hello There ! Welcome :)    
+Hello There ! 
+
+Welcome :) 
+
+I'm glad that you are curious to know bit more about me.
 
 My Name is Anil, I’m from India.    
 
