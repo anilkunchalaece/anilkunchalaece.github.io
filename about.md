@@ -3,13 +3,20 @@ layout: page
 title: About Me!
 sidebar_link: true
 ---
+<img style="float: right; width:170px;" class="img-thumbnail" src="https://avatars3.githubusercontent.com/u/17523245">
 
-Hello There ! Welcome :)  
+Hello There ! Welcome :)    
 
-My Name is Anil, I'm from India.   
+My Name is Anil, I’m from India.    
+
+
+
+
 Currently pursuing PhD from [Technological University Dublin](https://www.tudublin.ie/), and ***tinkering*** with following
 - Machine Learning
 - Internet of Things
+
+<!-- | ![Flowers](https://avatars3.githubusercontent.com/u/17523245) | I am text to the right | -->
 
 ### Jack of few skills
 I know little bit of following, all thanks to *stackoverflow*.
