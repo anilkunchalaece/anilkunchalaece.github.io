@@ -33,9 +33,6 @@ Kernal - 5.3.0-64-generic
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/nvidia_info.jpg)
 
 #### 1. installing openCV and contrib libs
-I found a nice article about [installing caffe in ubuntu](https://chunml.github.io/ChunML.github.io/project/Installing-Caffe-Ubuntu/).
-
-
 ~~~shell
   wget -c  -O opencv-3.4.11.tar.gz https://github.com/opencv/opencv/archive/3.4.11.tar.gz       
   tar xvzf opencv-3.4.11.tar.gz
@@ -66,8 +63,6 @@ python
 ~~~
 
 #### 2. installing protobuf  
-[ref](https://gist.github.com/diegopacheco/cd795d36e6ebcd2537cd18174865887b)
-
 ~~~shell
 sudo apt-get install autoconf automake libtool curl make g++ unzip -y
 git clone https://github.com/google/protobuf.git
@@ -80,7 +75,6 @@ sudo ldconfig
 ~~~
 
 #### 3. installing boost 1.58.0
-[ref](https://www.boost.org/doc/libs/1_66_0/more/getting_started/unix-variants.html)
 download  boost from [here](https://www.boost.org/users/history/)
 ~~~shell
 tar xvzf boost-1.58.tar
@@ -168,15 +162,20 @@ export PYTHONPATH=/home/anil/Documents/xNect/caffe/python:$PYTHONPATH
 ```
 
 check caffe
-```
+~~~shell
 python
 >>> import caffe
-```
+~~~
 
-# build project
-```
+##### build project and run demo
+~~~shell
 cmake -DOpenCV_DIR=/usr/share/opencv  -DCaffe_DIR=/home/anil/Documents/xNect/caffe/build ..
+make -j$(nproc)
 cd ../bin/Release
 ./XNECT
-```
-It will run the example
+~~~
+
+##### References
+1. I found a nice article about [installing caffe in ubuntu](https://chunml.github.io/ChunML.github.io/project/Installing-Caffe-Ubuntu/).
+2. [Protobuf installation](https://gist.github.com/diegopacheco/cd795d36e6ebcd2537cd18174865887b)
+3. [Boost 1.58 Installation](https://www.boost.org/doc/libs/1_66_0/more/getting_started/unix-variants.html)

@@ -22,7 +22,7 @@ Currently pursuing PhD from [Technological University Dublin](https://www.tudubl
 
 <!-- | ![Flowers](https://avatars3.githubusercontent.com/u/17523245) | I am text to the right | -->
 
-### Jack of few skills
+### Jack of few
 I know little bit of following, all thanks to *stackoverflow*.
 - Python, Matlab, Ionic
 - Arduino, Raspberry Pi
@@ -35,6 +35,9 @@ I know little bit of following, all thanks to *stackoverflow*.
 - Master of Technology from [JNTU Anantapuramu, India ](https://www.jntua.ac.in/) in [KSRM College of Engineering](https://ksrmce.ac.in/)
 - Bachelor of Technology from [SV University, India ](https://www.svuniversity.edu.in) in [KORM College of Engineering](http://kormce.ac.in/)
 - Diploma from [SV Govt Polytechnic, Tirupati , India](https://svgovtpolytirupathi.ac.in/)
+
+### Other blogs
+- [My Tinkering with Arduino](http://anilarduino.blogspot.com/) - Contrast to its name, I also post about few more things
 
 ### Contact me
 
