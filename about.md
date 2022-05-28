@@ -24,7 +24,7 @@ Currently pursuing PhD from [Technological University Dublin](https://www.tudubl
 
 ### Jack of few
 I know little bit of following, all thanks to *stackoverflow*.
-- Python, Matlab, Ionic
+- Python, Matlab, Ionic, Angular
 - Arduino, Raspberry Pi
 
 ### Research Experience

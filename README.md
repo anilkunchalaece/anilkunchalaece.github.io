@@ -1,3 +1,8 @@
+# How to run
+- `sudo apt install ruby-bundler ruby-dev`
+- `bundle install`
+- `bundle exec jekyll serve`
+
 # Hydeout
 
 Hydeout updates the original [Hyde](https://github.com/poole/hyde)
