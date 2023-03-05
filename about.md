@@ -17,7 +17,7 @@ My Name is Anil, I’m from India.
 
 
 Currently pursuing PhD from [Technological University Dublin](https://www.tudublin.ie/), and ***tinkering*** with following
-- Machine Learning
+- Computer Vision
 - Internet of Things
 
 <!-- | ![Flowers](https://avatars3.githubusercontent.com/u/17523245) | I am text to the right | -->

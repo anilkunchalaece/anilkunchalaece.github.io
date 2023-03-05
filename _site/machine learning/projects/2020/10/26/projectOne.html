@@ -235,12 +235,53 @@
 
 
   <div class="post-body">
-    <p>You just need to add</p>
+    <!-- You just need to add 
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">category</span><span class="pi">:</span> 
-  <span class="pi">-</span> <span class="s">Projects</span>
-</code></pre></div></div>
-<p>in start of the page</p>
+~~~yaml
+category: 
+  - Projects
+~~~ -->
+
+<p>This section is just my notepad. I post stuff of which I might do in future</p>
+
+<h1 id="todo"><strong>TODO</strong></h1>
+
+<h2 id="learning-stuff"><em>Learning Stuff</em></h2>
+<ol>
+  <li>Basic DL model using <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR</a> and Pytorch
+    <ol>
+      <li>Download CIFAR using <code class="language-plaintext highlighter-rouge">wget https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz</code></li>
+    </ol>
+  </li>
+  <li>Re-implement it using Pytorch Lightning</li>
+  <li>Hyper optimization tuning using RayTune
+    <ol>
+      <li>Training parameters (like learning rate) tuning</li>
+      <li>Model parameters (No Of parameters in each layer &amp; No of Layers) tuning</li>
+    </ol>
+  </li>
+  <li>Model Interpretability using <a href="https://captum.ai/">Captum</a>
+    <ol>
+      <li>Explore model input interpretability for images</li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="openmmlab"><em>OpenMMLab</em></h2>
+<ol>
+  <li>Test MMDetection</li>
+  <li>Test MMPose</li>
+  <li>Try to combine both detection and pose</li>
+</ol>
+
+<h3 id="mmdetection-logs">MMDetection Logs</h3>
+<ul>
+  <li>Got Error - <em>KeyError: ‘Cascade Mask R-CNN’</em>
+    <ul>
+      <li>Refer <a href="https://github.com/open-mmlab/mmdetection/issues/8122">Issue</a> and [Ans] (https://github.com/open-mmlab/mmdetection/issues/8122#issuecomment-1158658158)</li>
+    </ul>
+  </li>
+</ul>
 
     
 
