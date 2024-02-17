@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-05T14:19:22+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Anil Kunchala</title><subtitle>a &lt;i&gt; Tinkerers &lt;/i&gt; log about his experiments with few things he came across</subtitle><author><name>Anil Kunchala</name></author><entry><title type="html">Mourne Mountains - Northern Ireland</title><link href="http://localhost:4000/hiking/travel/2022/05/28/Mourne-Mountains.html" rel="alternate" type="text/html" title="Mourne Mountains - Northern Ireland" /><published>2022-05-28T00:00:00+01:00</published><updated>2022-05-28T00:00:00+01:00</updated><id>http://localhost:4000/hiking/travel/2022/05/28/Mourne-Mountains</id><content type="html" xml:base="http://localhost:4000/hiking/travel/2022/05/28/Mourne-Mountains.html"><![CDATA[<p>Route</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-02-17T18:22:08+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Anil Kunchala</title><subtitle>a &lt;i&gt; Tinkerers &lt;/i&gt; log about his experiments with few things he came across</subtitle><author><name>Anil Kunchala</name></author><entry><title type="html">SMPL-based 3D Pedestrian Pose Prediction</title><link href="http://localhost:4000/phd/publication/projects/2024/02/15/smpl-paper.html" rel="alternate" type="text/html" title="SMPL-based 3D Pedestrian Pose Prediction" /><published>2024-02-15T00:00:00+00:00</published><updated>2024-02-15T00:00:00+00:00</updated><id>http://localhost:4000/phd/publication/projects/2024/02/15/smpl-paper</id><content type="html" xml:base="http://localhost:4000/phd/publication/projects/2024/02/15/smpl-paper.html"><![CDATA[<h2 id="overview">Overview</h2>
+<p><strong>Title:</strong> SMPL-Based 3D Pedestrian Pose Prediction</p>
+
+<p><strong>Published in:</strong> 2021 16th IEEE International Conference on Automatic Face and Gesture Recognition (FG 2021)</p>
+
+<p><img src="http://localhost:4000/assets/images/fg2021/ADV_SMPL_AWARE.png" alt="image" />
+<strong>Adversarial SMPL-based Recurrent Neural Network Architecture</strong></p>
+
+<h2 id="abstract">Abstract</h2>
+<p>In 3D pedestrian pose prediction, joint-rotation-based pose representation is extensively used due to the unconstrained degree of freedom for each joint and its ability to regress the 3D statistical wireframe. However, all the existing joint-rotation-based pose prediction approaches ignore the centrality of the distinct pose parameter components and are consequently prone to suffer from error accumulation along the kinematic chain, which results in unnatural human poses. In joint-rotationbased pose prediction, Skinned Multi-Person Linear (SMPL) parameters are widely used to represent pedestrian pose.</p>
+
+<p>In this work, a novel SMPL-based pose prediction network is proposed to address the centrality of each SMPL component by distributing the network weights among them. Furthermore, to constrain the network to generate only plausible human poses, an adversarial training approach is employed. The effectiveness of the proposed network is evaluated using the PedX and BEHAVE datasets. The proposed approach significantly outperforms state-of-the-art methods with improved prediction accuracy and generates plausible human pose predictions.</p>
+
+<h2 id="key-contributions">Key Contributions</h2>
+<ul>
+  <li>We designed a multi-layer perception generative adversarial network to penalize the network for unnatural poses while allowing natural one.</li>
+  <li>The SMPL-based architecture is proposed to address the centrality of global rotation and translation parameters with respect to the pose parameters</li>
+</ul>
+
+<h2 id="qualitative-results">Qualitative Results</h2>
+<p><img src="http://localhost:4000/assets/images/fg2021/ADV_SMPL_AWARE_Results.png" alt="image" /></p>
+
+<h2 id="publication-link-and-code">Publication Link and Code</h2>
+<ul>
+  <li><a href="https://arrow.tudublin.ie/cgi/viewcontent.cgi?article=1374&amp;context=scschcomcon" target="_blank">Read the full paper</a></li>
+  <li><a href="https://github.com/anilkunchalaece/ADV-SA-LSTM" target="_blank">Source Code</a></li>
+  <li><a href="https://youtu.be/OeOTEcbYsrI" target="_blank">FG 2021 Presentation</a></li>
+</ul>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Projects&quot;]" /><summary type="html"><![CDATA[Adversarial SMPL based 3D Pedestrian Pose Prediction]]></summary></entry><entry><title type="html">Mourne Mountains - Northern Ireland</title><link href="http://localhost:4000/hiking/travel/2022/05/28/Mourne-Mountains.html" rel="alternate" type="text/html" title="Mourne Mountains - Northern Ireland" /><published>2022-05-28T00:00:00+01:00</published><updated>2022-05-28T00:00:00+01:00</updated><id>http://localhost:4000/hiking/travel/2022/05/28/Mourne-Mountains</id><content type="html" xml:base="http://localhost:4000/hiking/travel/2022/05/28/Mourne-Mountains.html"><![CDATA[<p>Route</p>
 
 <p><img src="http://localhost:4000/assets/maps/21-may-hillwalkerclub-mourne-mountains.png" alt="image" /></p>
 
