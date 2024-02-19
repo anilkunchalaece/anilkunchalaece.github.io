@@ -32,12 +32,13 @@ I know little bit of following, all thanks to *stackoverflow*.
 - Jr Research Assistant in [R&D Cell , KSRM College of Engineering](https://ksrmce.ac.in/)
 
 ### Education
-- Master of Technology from [JNTU Anantapuramu, India ](https://www.jntua.ac.in/) in [KSRM College of Engineering](https://ksrmce.ac.in/)
-- Bachelor of Technology from [SV University, India ](https://www.svuniversity.edu.in) in [KORM College of Engineering](http://kormce.ac.in/)
+- Master of Technology from [JNTU Anantapuramu, India ](https://www.jntua.ac.in/) in [KORM College of Engineering](http://kormce.ac.in/)
+- Bachelor of Technology from [SV University, India ](https://www.svuniversity.edu.in) in [KSRM College of Engineering](https://ksrmce.ac.in/)
 - Diploma from [SV Govt Polytechnic, Tirupati , India](https://svgovtpolytirupathi.ac.in/)
 
 ### Other blogs
 - [My Tinkering with Arduino](http://anilarduino.blogspot.com/) - Contrast to its name, I also post about few more things
+- [Youtube channel - **Learn It**](https://www.youtube.com/@learnit3885/videos) - I did a bit of youtubing in the past, you can find my videos ranging from electrinc prototyping, web development and andriod development and few other things in my channel.
 
 ### Contact me
 

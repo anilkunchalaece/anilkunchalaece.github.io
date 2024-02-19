@@ -35,5 +35,7 @@ In this work, a novel SMPL-based pose prediction network is proposed to address 
 
 ## Publication Link and Code
 - <a href="https://arrow.tudublin.ie/cgi/viewcontent.cgi?article=1374&context=scschcomcon" target="_blank">Read the full paper</a>
+- <a href="https://youtu.be/OeOTEcbYsrI" target="_blank">FG 2021 Presentation Video</a>
+- <a href="https://drive.google.com/file/d/1yl6l8_vDKse4vCQ_LtTk6dgMY3LTmAqw/view?usp=sharing" target="_blank">FG 2021 Presentation Slides</a>
+- <a href="https://drive.google.com/file/d/1K3FvySkvguGt_yD-mFijZyALVjKBzN14/view?usp=sharing" target="_blank">FG 2021 Poster</a>
 - <a href="https://github.com/anilkunchalaece/ADV-SA-LSTM" target="_blank">Source Code</a>
-- <a href="https://youtu.be/OeOTEcbYsrI" target="_blank">FG 2021 Presentation</a>
