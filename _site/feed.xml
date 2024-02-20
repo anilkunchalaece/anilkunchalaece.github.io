@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-02-19T23:35:17+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Anil Kunchala</title><subtitle>a &lt;i&gt; Tinkerers &lt;/i&gt; log about his experiments with few things he came across</subtitle><author><name>Anil Kunchala</name></author><entry><title type="html">Bray To Graystones- Ireland</title><link href="http://localhost:4000/hiking/travel/2024/02/18/bray.html" rel="alternate" type="text/html" title="Bray To Graystones- Ireland" /><published>2024-02-18T00:00:00+00:00</published><updated>2024-02-18T00:00:00+00:00</updated><id>http://localhost:4000/hiking/travel/2024/02/18/bray</id><content type="html" xml:base="http://localhost:4000/hiking/travel/2024/02/18/bray.html"><![CDATA[<p>Route</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-02-20T00:12:07+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Anil Kunchala</title><subtitle>a &lt;i&gt; Tinkerers &lt;/i&gt; log about his experiments with few things he came across</subtitle><author><name>Anil Kunchala</name></author><entry><title type="html">Towards A Framework for Privacy-Preserving Pedestrian Analysis</title><link href="http://localhost:4000/phd/publication/projects/2024/02/19/privacy-framework-paper.html" rel="alternate" type="text/html" title="Towards A Framework for Privacy-Preserving Pedestrian Analysis" /><published>2024-02-19T00:00:00+00:00</published><updated>2024-02-19T00:00:00+00:00</updated><id>http://localhost:4000/phd/publication/projects/2024/02/19/privacy-framework-paper</id><content type="html" xml:base="http://localhost:4000/phd/publication/projects/2024/02/19/privacy-framework-paper.html"><![CDATA[<h2 id="overview">Overview</h2>
+<p><strong>Title:</strong> Towards A Framework for Privacy-Preserving Pedestrian Analysis</p>
+
+<p><strong>Published in:</strong> 2023 IEEE CVF Winter Conference on Applications of Computer Vision (WACV 2023)</p>
+
+<p><img src="http://localhost:4000/assets/images/wacv2023/wacv2023-results.png" alt="image" />
+<strong>Qualitative results for the proposed and baseline methods</strong></p>
+
+<h2 id="abstract">Abstract</h2>
+<p>The design of pedestrian-friendly infrastructures plays a crucial role in creating sustainable transportation in urban environments. Analyzing pedestrian behaviour in response to existing infrastructure is pivotal to planning, maintaining, and creating more pedestrian-friendly facilities. Many approaches have been proposed to extract such behaviour by applying deep learning models to video data. Video data, however, includes an broad spectrum of privacy-sensitive information about individuals, such as their location at a given time or who they are with. Most of the existing mod-
+els use privacy-invasive methodologies to track, detect, and analyse individual or group pedestrian behaviour patterns.</p>
+
+<p>As a step towards privacy-preserving pedestrian analysis, this paper introduces a framework to anonymize all pedestrians before analyzing their behaviors. The proposed framework leverages recent developments in 3D wireframe reconstruction and digital in-painting to represent pedestrians with quantitative wireframes by removing their images while preserving pose, shape, and background scene context. To evaluate the proposed framework, a generic metric is introduced for each of privacy and utility. Experimental evaluation on widely-used datasets shows that the proposed framework outperforms traditional and state-of-the-art image filtering approaches by generating best privacy utility
+trade-off.</p>
+
+<h2 id="key-contributions">Key Contributions</h2>
+<ul>
+  <li>A novel end-to-end framework is introduced to generate a privacy-enhanced version of a given video or
+image sequence.</li>
+  <li>Both a generic utility and statistical similarity-based privacy metrics are proposed to evaluate the privacy utility trade-off.</li>
+</ul>
+
+<h2 id="overview-of-the-proposed-framework">Overview of the proposed framework</h2>
+<p><img src="http://localhost:4000/assets/images/wacv2023/wacv2023-framework.png" alt="image" /></p>
+
+<h2 id="privacy-utility-trade-off">Privacy-Utility Trade-off</h2>
+<p><img src="http://localhost:4000/assets/images/wacv2023/wacv2023-results-plots.png" alt="image" /></p>
+
+<h2 id="publication-link-and-code">Publication Link and Code</h2>
+<ul>
+  <li><a href="https://arrow.tudublin.ie/cgi/viewcontent.cgi?article=1411&amp;context=scschcomcon" target="_blank">Read the full paper</a></li>
+  <li><a href="https://www.youtube.com/watch?v=Ke5vPS9fwUA" target="_blank">WACV 2023 Presentation Video</a></li>
+  <li><a href="https://drive.google.com/file/d/1ZROKNr6W2BqqKL1qUM2tOAF-ckC4zrZi/view?usp=sharing" target="_blank">WACV 2023 Presentation Slides</a></li>
+  <li><a href="https://drive.google.com/file/d/1DIcMZizTPD4LhC8Ir7pYvc7vNcjhyS4v/view?usp=sharing" target="_blank">WACV 2023 Poster</a></li>
+  <li><a href="https://github.com/anilkunchalaece/privacyFramework" target="_blank">Source Code</a></li>
+</ul>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Projects&quot;]" /><summary type="html"><![CDATA[Towards A Framework for Privacy-Preserving Pedestrian Analysis]]></summary></entry><entry><title type="html">Bray To Graystones- Ireland</title><link href="http://localhost:4000/hiking/travel/2024/02/18/bray.html" rel="alternate" type="text/html" title="Bray To Graystones- Ireland" /><published>2024-02-18T00:00:00+00:00</published><updated>2024-02-18T00:00:00+00:00</updated><id>http://localhost:4000/hiking/travel/2024/02/18/bray</id><content type="html" xml:base="http://localhost:4000/hiking/travel/2024/02/18/bray.html"><![CDATA[<p>Route</p>
 
 <p><img src="http://localhost:4000/assets/maps/bray-greystones-cliff-walk.png" alt="image" /></p>
 
