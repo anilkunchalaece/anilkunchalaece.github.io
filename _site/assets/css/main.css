@@ -268,7 +268,7 @@ pre code { background-color: transparent; color: inherit; font-size: 100%; paddi
 .highlight .lineno { color: #999; display: inline-block; padding-left: 0.25rem; padding-right: 0.75rem; user-select: none; }
 
 /* Layout Styles for managing the structural hierarchy of the site. Hydeout features the large colored sidebar from Hyde that houses the site name, intro, and "footer" content. Sidebar is on top of content on mobile and expands into sidebar on larger width displays. Sidebar CSS assumes HTML looks like this for post pages: body > #sidebar > header (primary sidebar content -- i.e. title) > h1 (home page only, otherwise div or span) > secondary nav content we may want to hide on certain pages > .container > h1 (non-home page) > .content Basic approach is to color in body, make sidebar background transparent, and then fill in the .container or .content elements depending on how far we want the sidebar or header to stretch. */
-body { background-attachment: fixed; background-color: #8f2922; background-image: linear-gradient(to bottom, #ac3129, #72211b); color: rgba(255, 255, 255, 0.75); display: flex; flex-direction: column; min-height: 100vh; }
+body { background-attachment: fixed; background-color: #2C3539; background-image: linear-gradient(to bottom, #3c484d, #1c2225); color: rgba(255, 255, 255, 0.75); display: flex; flex-direction: column; min-height: 100vh; }
 
 #sidebar { flex: 0 0 auto; padding: 2rem; }
 

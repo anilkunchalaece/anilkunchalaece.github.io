@@ -1,5 +1,5 @@
 <div id="sidebar">
-  <header>
+  <!-- <header>
     <{% if page.layout == "index" %}h1{% else %}div{% endif %} class="site-title">
       <a href="{{ "/" | relative_url }}">
         {% unless page.url == "/" %}
@@ -9,7 +9,22 @@
       </a>
     </{% if page.layout == "index" %}h1{% else %}div{% endif %}>
     <p class="lead">{{ site.description }}</p>
-  </header>
+  </header> -->
+
+  <!-- Custom Photo and Links Section -->
+  <div class="profile-section">
+    <img src="{{site.url }}{{ site.baseurl }}/assets/images/Anil.png" alt="Anil Kunchala" class="profile-photo">
+    <p class="profile-name">Anil Kunchala</p>
+    <p class="profile-title">PhD Student at TU Dublin, Ireland</p>
+    <ul class="profile-links">
+      <li><a href="https://www.linkedin.com/in/anil-kunchala-aa9b2980" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="https://github.com/anilkunchalaece" target="_blank"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://scholar.google.com/citations?user=8VpEQr8AAAAJ" target="_blank"><i class="fa-brands fa-google-scholar"></i></a></li>
+      <li><a href="mailto:anilkunchalaece@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li> 
+      <!-- Add more links as needed -->
+    </ul>
+  </div>
+
   {% include sidebar-nav-links.html %}
 
   {% if site.version %}
@@ -19,3 +34,50 @@
   {% include sidebar-icon-links.html %}
   {% include copyright.html %}
 </div>
+
+<!-- Add some CSS to style the new profile section -->
+<style>
+  .profile-section {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 40%;
+  }
+  .profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  .profile-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .profile-title {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  .profile-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between the links */
+  }
+  .profile-links li {
+    margin: 0;
+  }
+  .profile-links a {
+    color: #007acc;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Arrange icon and text vertically */
+  }
+  .profile-links a:hover {
+    text-decoration: underline;
+  }
+  .profile-links i {
+    margin-bottom: 5px; /* Space between icon and text */
+  }
+</style>

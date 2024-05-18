@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-18T12:30:40+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Anil Kunchala</title><subtitle>a &lt;i&gt; Tinkerers &lt;/i&gt; log about his experiments with few things he came across</subtitle><author><name>Anil Kunchala</name></author><entry><title type="html">Towards A Framework for Privacy-Preserving Pedestrian Analysis</title><link href="http://localhost:4000/phd/publication/projects/2024/02/19/privacy-framework-paper.html" rel="alternate" type="text/html" title="Towards A Framework for Privacy-Preserving Pedestrian Analysis" /><published>2024-02-19T00:00:00+00:00</published><updated>2024-02-19T00:00:00+00:00</updated><id>http://localhost:4000/phd/publication/projects/2024/02/19/privacy-framework-paper</id><content type="html" xml:base="http://localhost:4000/phd/publication/projects/2024/02/19/privacy-framework-paper.html"><![CDATA[<h2 id="overview">Overview</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-18T20:52:05+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Anil Kunchala</title><subtitle>a &lt;i&gt; Tinkerers &lt;/i&gt; log about his experiments with few things he came across</subtitle><author><name>Anil Kunchala</name></author><entry><title type="html">Towards A Framework for Privacy-Preserving Pedestrian Analysis</title><link href="http://localhost:4000/phd/publication/projects/2024/02/19/privacy-framework-paper.html" rel="alternate" type="text/html" title="Towards A Framework for Privacy-Preserving Pedestrian Analysis" /><published>2024-02-19T00:00:00+00:00</published><updated>2024-02-19T00:00:00+00:00</updated><id>http://localhost:4000/phd/publication/projects/2024/02/19/privacy-framework-paper</id><content type="html" xml:base="http://localhost:4000/phd/publication/projects/2024/02/19/privacy-framework-paper.html"><![CDATA[<h2 id="overview">Overview</h2>
 <p><strong>Title:</strong> Towards A Framework for Privacy-Preserving Pedestrian Analysis</p>
 
 <p><strong>Published in:</strong> 2023 IEEE CVF Winter Conference on Applications of Computer Vision (WACV 2023)</p>
@@ -252,50 +252,4 @@ make <span class="nt">-j</span><span class="si">$(</span><span class="nb">nproc<
   <li>I found a nice article about <a href="https://chunml.github.io/ChunML.github.io/project/Installing-Caffe-Ubuntu/">installing caffe in ubuntu</a>.</li>
   <li><a href="https://gist.github.com/diegopacheco/cd795d36e6ebcd2537cd18174865887b">Protobuf installation</a></li>
   <li><a href="https://www.boost.org/doc/libs/1_66_0/more/getting_started/unix-variants.html">Boost 1.58 Installation</a></li>
-</ol>]]></content><author><name>Anil Kunchala</name></author><category term="Machine Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[In this post I will explain how to setup XNect and run the demo provided in the example]]></summary></entry><entry><title type="html">Simple Project</title><link href="http://localhost:4000/machine%20learning/projects/2020/10/26/projectOne.html" rel="alternate" type="text/html" title="Simple Project" /><published>2020-10-26T00:00:00+00:00</published><updated>2020-10-26T00:00:00+00:00</updated><id>http://localhost:4000/machine%20learning/projects/2020/10/26/projectOne</id><content type="html" xml:base="http://localhost:4000/machine%20learning/projects/2020/10/26/projectOne.html"><![CDATA[<!-- You just need to add 
-
-~~~yaml
-category: 
-  - Projects
-~~~ -->
-
-<p>This section is just my notepad. I post stuff of which I might do in future</p>
-
-<h1 id="todo"><strong>TODO</strong></h1>
-
-<h2 id="learning-stuff"><em>Learning Stuff</em></h2>
-<ol>
-  <li>Basic DL model using <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR</a> and Pytorch
-    <ol>
-      <li>Download CIFAR using <code class="language-plaintext highlighter-rouge">wget https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz</code></li>
-    </ol>
-  </li>
-  <li>Re-implement it using Pytorch Lightning</li>
-  <li>Hyper optimization tuning using RayTune
-    <ol>
-      <li>Training parameters (like learning rate) tuning</li>
-      <li>Model parameters (No Of parameters in each layer &amp; No of Layers) tuning</li>
-    </ol>
-  </li>
-  <li>Model Interpretability using <a href="https://captum.ai/">Captum</a>
-    <ol>
-      <li>Explore model input interpretability for images</li>
-    </ol>
-  </li>
-</ol>
-
-<h2 id="openmmlab"><em>OpenMMLab</em></h2>
-<ol>
-  <li>Test MMDetection</li>
-  <li>Test MMPose</li>
-  <li>Try to combine both detection and pose</li>
-</ol>
-
-<h3 id="mmdetection-logs">MMDetection Logs</h3>
-<ul>
-  <li>Got Error - <em>KeyError: ‘Cascade Mask R-CNN’</em>
-    <ul>
-      <li>Refer <a href="https://github.com/open-mmlab/mmdetection/issues/8122">Issue</a> and [Ans] (https://github.com/open-mmlab/mmdetection/issues/8122#issuecomment-1158658158)</li>
-    </ul>
-  </li>
-</ul>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Projects&quot;]" /><summary type="html"><![CDATA[How to add Project in bog]]></summary></entry></feed>
+</ol>]]></content><author><name>Anil Kunchala</name></author><category term="Machine Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[In this post I will explain how to setup XNect and run the demo provided in the example]]></summary></entry></feed>

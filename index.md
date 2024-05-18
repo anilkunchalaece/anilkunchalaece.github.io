@@ -1,46 +1,83 @@
 ---
-layout: page
-title: About Me!
-# sidebar_link: true
+layout: landing
 order: 1
 ---
-<img style="float: right; width:170px;" class="img-thumbnail" src="https://avatars3.githubusercontent.com/u/17523245">
+<style>
+.publication {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+  }
 
-Hello There ! 
+.publication img {
+    width: 150px;
+    height:100px;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+  
+.publication-details {
+    flex: 1;
+  }
 
-Welcome :) 
+.publication p {
+  margin:0;
+  padding:0;
+}
 
-I'm glad that you are curious to know bit more about me.
+</style>
 
-My Name is Anil, I’m from India.    
+#### About Me
+I am a Ph.D. researcher at <a href="https://www.tudublin.ie/" target="_target">TU Dublin, Ireland </a> \
+My research focuses on *Privacy-preserving Pedestrian Behaviour Analysis*.
 
 
+#### Work Experience
+- Product Lead - <span><a href="https://cognition.world/" target="_blank"> Cognition World Pvt Ltd </a> </span>, Ireland - [Jul 2021 - Present]
+- Research Assistant - <span> <a href="https://www.lincoln.ac.uk/" target="_blank">University of Lincoln</a> </span>, United Kingdom - [Sep 2019 - Jun 2020]
+- Jr Research Assistant - <a href="https://ksrmce.ac.in/" target="_blank"> KSRM College of Engineering </a>, India - [Oct 2013- Aug 2019]
 
+#### Programming Skills
+- Pytorch, AWS Sagemaker, OpenMMLab
+- Python, Typescript, Angular 
+- AWS Services [EC2, Lambda, DynamoDB, API Gateway]
 
-Currently pursuing PhD from [Technological University Dublin](https://www.tudublin.ie/), and ***tinkering*** with following
-- Computer Vision
-- Internet of Things
+#### Publications
+<div class="publication">
+  <img src="{{site.url }}{{ site.baseurl }}/assets/images/wacv2023/wacv2023-results.png" alt="WACV 2023">
+  <div class="publication-details">
+    <p><a href="{{site.baseurl}}/phd/publication/projects/2024/02/19/privacy-framework-paper.html" target="_blank">Towards A Framework for Privacy-Preserving Pedestrian Analysis</a></p>
+    2023 IEEE CVF Winter Conference on Applications of Computer Vision (WACV 2023)
+  </div>
+</div>
 
-<!-- | ![Flowers](https://avatars3.githubusercontent.com/u/17523245) | I am text to the right | -->
+<div class="publication">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/fg2021/ADV_SMPL_AWARE.png" alt="FG 2021">
+  <div class="publication-details">
+    <p><a href="{{site.baseurl}}/phd/publication/projects/2024/02/15/smpl-paper.html" target="_blank">SMPL-Based 3D Pedestrian Pose Prediction</a></p>
+    2021 16th IEEE International Conference on Automatic Face and Gesture Recognition
+  </div>
+</div>
 
-### Jack of few
-I know little bit of following, all thanks to *stackoverflow*.
-- Python, Matlab, Ionic, Angular
-- Arduino, Raspberry Pi
+<div class="publication">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/leaf_detection.png" alt="Leaf Detection">
+  <div class="publication-details">
+    <p> <a href="https://ieeexplore.ieee.org/abstract/document/9153971" target="_blank"> Transfer Learning based Fuzzy Deep Neural Networks for leaves detection from Digital Images 
+    </a> </p>
+    2020 International Conference for Emerging Technology 
+  </div>
+</div>
 
-### Research Experience
-- Research Assistant in [University of Lincoln, UK](https://www.lincoln.ac.uk/home/)
-- Jr Research Assistant in [R&D Cell , KSRM College of Engineering](https://ksrmce.ac.in/)
+#### Research Interests
+*Computer Vision :* Object Tracking and Activity Analysis \
+*Deep Learning :* Few Shot and Feature Learning, Generative Adversarial Networks 
 
-### Education
-- Master of Technology from [JNTU Anantapuramu, India ](https://www.jntua.ac.in/) in [KORM College of Engineering](http://kormce.ac.in/)
-- Bachelor of Technology from [SV University, India ](https://www.svuniversity.edu.in) in [KSRM College of Engineering](https://ksrmce.ac.in/)
-- Diploma from [SV Govt Polytechnic, Tirupati , India](https://svgovtpolytirupathi.ac.in/)
+#### Education
+- PhD in Computer Science [Pursuing] from <a href="https://www.tudublin.ie/" target="_blank"> Technological University Dublin, Ireland</a>
+- Master of Technology from <a href="https://www.jntua.ac.in/" target="_blank"> JNTU Anantapuramu, India </a>
+- Bachelor of Technology from <a href="https://www.svuniversity.edu.in" target="_blank"> SV University, India</a>
+- Diploma from <a href="https://svgovtpolytirupathi.ac.in/"> SV Govt Polytechnic, Tirupati , India </a>
 
-### Other blogs
+#### Other blogs
 - [My Tinkering with Arduino](http://anilarduino.blogspot.com/) - Contrast to its name, I also post about few more things
 - [Youtube channel - **Learn It**](https://www.youtube.com/@learnit3885/videos) - I did a bit of youtubing in the past, you can find my videos ranging from electrinc prototyping, web development and andriod development and few other things in my channel.
-
-### Contact me
-
-[anilkunchalaeceATgmail.com]()

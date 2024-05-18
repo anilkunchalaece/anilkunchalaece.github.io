@@ -11,7 +11,7 @@
 
   <title>
     
-      About Me! &middot; Anil Kunchala
+       &middot; Anil Kunchala
     
   </title>
 
@@ -31,14 +31,16 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Additional head bits without overriding original head -->
 </head>
 
 
-  <body class="page home">
+  <body>
 
     <div id="sidebar">
-  <header>
+  <!-- <header>
     <div class="site-title">
       <a href="/">
         
@@ -46,7 +48,22 @@
       </a>
     </div>
     <p class="lead">a <i> Tinkerers </i> log about his experiments with few things he came across</p>
-  </header>
+  </header> -->
+
+  <!-- Custom Photo and Links Section -->
+  <div class="profile-section">
+    <img src="http://localhost:4000/assets/images/Anil.png" alt="Anil Kunchala" class="profile-photo">
+    <p class="profile-name">Anil Kunchala</p>
+    <p class="profile-title">PhD Student at TU Dublin, Ireland</p>
+    <ul class="profile-links">
+      <li><a href="https://www.linkedin.com/in/anil-kunchala-aa9b2980" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="https://github.com/anilkunchalaece" target="_blank"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://scholar.google.com/citations?user=8VpEQr8AAAAJ" target="_blank"><i class="fa-brands fa-google-scholar"></i></a></li>
+      <li><a href="mailto:anilkunchalaece@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li> 
+      <!-- Add more links as needed -->
+    </ul>
+  </div>
+
   <nav id="sidebar-nav-links">
   
     <a class="home-link  active"
@@ -68,8 +85,6 @@
   
 
   
-    
-  
 
   
 
@@ -107,8 +122,6 @@
     
   
 
-  
-    
   
 
   
@@ -199,60 +212,140 @@
 
 </div>
 
+<!-- Add some CSS to style the new profile section -->
+<style>
+  .profile-section {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 40%;
+  }
+  .profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  .profile-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .profile-title {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  .profile-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between the links */
+  }
+  .profile-links li {
+    margin: 0;
+  }
+  .profile-links a {
+    color: #007acc;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Arrange icon and text vertically */
+  }
+  .profile-links a:hover {
+    text-decoration: underline;
+  }
+  .profile-links i {
+    margin-bottom: 5px; /* Space between icon and text */
+  }
+</style>
+
     <main class="container">
-      <header>
-  <h1 class="page-title">About Me! </h1>
-</header>
-<div class="content">
-  <p><img style="float: right; width:170px;" class="img-thumbnail" src="https://avatars3.githubusercontent.com/u/17523245" /></p>
+      <style>
+.publication {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+  }
 
-<p>Hello There !</p>
+.publication img {
+    width: 150px;
+    height:100px;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+  
+.publication-details {
+    flex: 1;
+  }
 
-<p>Welcome :)</p>
+.publication p {
+  margin:0;
+  padding:0;
+}
 
-<p>I’m glad that you are curious to know bit more about me.</p>
+</style>
 
-<p>My Name is Anil, I’m from India.</p>
+<h4 id="about-me">About Me</h4>
+<p>I am a Ph.D. researcher at <a href="https://www.tudublin.ie/" target="_target">TU Dublin, Ireland </a> <br />
+My research focuses on <em>Privacy-preserving Pedestrian Behaviour Analysis</em>.</p>
 
-<p>Currently pursuing PhD from <a href="https://www.tudublin.ie/">Technological University Dublin</a>, and <strong><em>tinkering</em></strong> with following</p>
+<h4 id="work-experience">Work Experience</h4>
 <ul>
-  <li>Computer Vision</li>
-  <li>Internet of Things</li>
+  <li>Product Lead - <span><a href="https://cognition.world/" target="_blank"> Cognition World Pvt Ltd </a> </span>, Ireland - [Jul 2021 - Present]</li>
+  <li>Research Assistant - <span> <a href="https://www.lincoln.ac.uk/" target="_blank">University of Lincoln</a> </span>, United Kingdom - [Sep 2019 - Jun 2020]</li>
+  <li>Jr Research Assistant - <a href="https://ksrmce.ac.in/" target="_blank"> KSRM College of Engineering </a>, India - [Oct 2013- Aug 2019]</li>
 </ul>
 
-<!-- | ![Flowers](https://avatars3.githubusercontent.com/u/17523245) | I am text to the right | -->
-
-<h3 id="jack-of-few">Jack of few</h3>
-<p>I know little bit of following, all thanks to <em>stackoverflow</em>.</p>
+<h4 id="programming-skills">Programming Skills</h4>
 <ul>
-  <li>Python, Matlab, Ionic, Angular</li>
-  <li>Arduino, Raspberry Pi</li>
+  <li>Pytorch, AWS Sagemaker, OpenMMLab</li>
+  <li>Python, Typescript, Angular</li>
+  <li>AWS Services [EC2, Lambda, DynamoDB, API Gateway]</li>
 </ul>
 
-<h3 id="research-experience">Research Experience</h3>
+<h4 id="publications">Publications</h4>
+<div class="publication">
+  <img src="http://localhost:4000/assets/images/wacv2023/wacv2023-results.png" alt="WACV 2023" />
+  <div class="publication-details">
+    <p><a href="/phd/publication/projects/2024/02/19/privacy-framework-paper.html" target="_blank">Towards A Framework for Privacy-Preserving Pedestrian Analysis</a></p>
+    2023 IEEE CVF Winter Conference on Applications of Computer Vision (WACV 2023)
+  </div>
+</div>
+
+<div class="publication">
+  <img src="http://localhost:4000/assets/images/fg2021/ADV_SMPL_AWARE.png" alt="FG 2021" />
+  <div class="publication-details">
+    <p><a href="/phd/publication/projects/2024/02/15/smpl-paper.html" target="_blank">SMPL-Based 3D Pedestrian Pose Prediction</a></p>
+    2021 16th IEEE International Conference on Automatic Face and Gesture Recognition
+  </div>
+</div>
+
+<div class="publication">
+  <img src="http://localhost:4000/assets/images/leaf_detection.png" alt="Leaf Detection" />
+  <div class="publication-details">
+    <p> <a href="https://ieeexplore.ieee.org/abstract/document/9153971" target="_blank"> Transfer Learning based Fuzzy Deep Neural Networks for leaves detection from Digital Images 
+    </a> </p>
+    2020 International Conference for Emerging Technology 
+  </div>
+</div>
+
+<h4 id="research-interests">Research Interests</h4>
+<p><em>Computer Vision :</em> Object Tracking and Activity Analysis <br />
+<em>Deep Learning :</em> Few Shot and Feature Learning, Generative Adversarial Networks</p>
+
+<h4 id="education">Education</h4>
 <ul>
-  <li>Research Assistant in <a href="https://www.lincoln.ac.uk/home/">University of Lincoln, UK</a></li>
-  <li>Jr Research Assistant in <a href="https://ksrmce.ac.in/">R&amp;D Cell , KSRM College of Engineering</a></li>
+  <li>PhD in Computer Science [Pursuing] from <a href="https://www.tudublin.ie/" target="_blank"> Technological University Dublin, Ireland</a></li>
+  <li>Master of Technology from <a href="https://www.jntua.ac.in/" target="_blank"> JNTU Anantapuramu, India </a></li>
+  <li>Bachelor of Technology from <a href="https://www.svuniversity.edu.in" target="_blank"> SV University, India</a></li>
+  <li>Diploma from <a href="https://svgovtpolytirupathi.ac.in/"> SV Govt Polytechnic, Tirupati , India </a></li>
 </ul>
 
-<h3 id="education">Education</h3>
-<ul>
-  <li>Master of Technology from <a href="https://www.jntua.ac.in/">JNTU Anantapuramu, India </a> in <a href="http://kormce.ac.in/">KORM College of Engineering</a></li>
-  <li>Bachelor of Technology from <a href="https://www.svuniversity.edu.in">SV University, India </a> in <a href="https://ksrmce.ac.in/">KSRM College of Engineering</a></li>
-  <li>Diploma from <a href="https://svgovtpolytirupathi.ac.in/">SV Govt Polytechnic, Tirupati , India</a></li>
-</ul>
-
-<h3 id="other-blogs">Other blogs</h3>
+<h4 id="other-blogs">Other blogs</h4>
 <ul>
   <li><a href="http://anilarduino.blogspot.com/">My Tinkering with Arduino</a> - Contrast to its name, I also post about few more things</li>
   <li><a href="https://www.youtube.com/@learnit3885/videos">Youtube channel - <strong>Learn It</strong></a> - I did a bit of youtubing in the past, you can find my videos ranging from electrinc prototyping, web development and andriod development and few other things in my channel.</li>
 </ul>
-
-<h3 id="contact-me">Contact me</h3>
-
-<p><a href="">anilkunchalaeceATgmail.com</a></p>
-
-</div>
 
     </main>
 
