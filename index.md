@@ -44,6 +44,14 @@ My research focuses on *Privacy-preserving Pedestrian Behaviour Analysis*.
 
 #### Publications
 <div class="publication">
+  <img src="{{site.url }}{{ site.baseurl }}/assets/images/cvip_2023/actor_centric.png" alt="CVIP 2023">
+  <div class="publication-details">
+    <p><a href="{{site.baseurl}}/phd/publication/projects/2024/08/02/actor-centric-paper.html" target="_blank"> Actor-Centric Spatio-Temporal Feature Extraction for Action Recognition </a></p>
+    2023 8th International Conference on Computer Vision and Image Processing (CVIP 2023)
+  </div>
+</div>
+
+<div class="publication">
   <img src="{{site.url }}{{ site.baseurl }}/assets/images/wacv2023/wacv2023-results.png" alt="WACV 2023">
   <div class="publication-details">
     <p><a href="{{site.baseurl}}/phd/publication/projects/2024/02/19/privacy-framework-paper.html" target="_blank">Towards A Framework for Privacy-Preserving Pedestrian Analysis</a></p>
