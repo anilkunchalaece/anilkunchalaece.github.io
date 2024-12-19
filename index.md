@@ -33,7 +33,7 @@ My research focuses on *Privacy-preserving Pedestrian Behaviour Analysis*.
 
 
 #### Work Experience
-- Product Lead - <span><a href="https://cognition.world/" target="_blank"> Cognition World Pvt Ltd </a> </span>, Ireland - [Jul 2021 - Present]
+- Data Scientist - <span><a href="https://cognition.world/" target="_blank"> Cognition World Pvt Ltd </a> </span>, Ireland - [Jul 2021 - Present]
 - Research Assistant - <span> <a href="https://www.lincoln.ac.uk/" target="_blank">University of Lincoln</a> </span>, United Kingdom - [Sep 2019 - Jun 2020]
 - Jr Research Assistant - <a href="https://ksrmce.ac.in/" target="_blank"> KSRM College of Engineering </a>, India - [Oct 2013- Aug 2019]
 
