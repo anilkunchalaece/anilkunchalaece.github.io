@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Xnect - Installation and running demo"
+category: 
+  - Blog
 categories:
-  - Machine Learning
-tags:
-  - Machine Learning
+  - Projects
 excerpt: In this post I will explain how to setup XNect and run the demo provided in the example
 comments: false
 

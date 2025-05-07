@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>
+    
+      Fine-tuning Custom Object Detector Using Pytorch &middot; Anil Kunchala
+    
+  </title>
+
+  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Additional head bits without overriding original head -->
+</head>
+
+
+  <body class="post">
+
+    <div id="sidebar">
+  <!-- <header>
+    <div class="site-title">
+      <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
+        
+        Anil Kunchala
+      </a>
+    </div>
+    <p class="lead">a <i> Tinkerers </i> log about his experiments with few things he came across</p>
+  </header> -->
+
+  <!-- Custom Photo and Links Section -->
+  <div class="profile-section">
+    <img src="http://localhost:4000/assets/images/Anil.png" alt="Anil Kunchala" class="profile-photo">
+    <p class="profile-name">Anil Kunchala, Ph.D.</p>
+    <!-- <p class="profile-title">Researcher at TU Dublin, Ireland</p> -->
+    <ul class="profile-links">
+      <li><a href="https://www.linkedin.com/in/anil-kunchala-aa9b2980" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="https://github.com/anilkunchalaece" target="_blank"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://scholar.google.com/citations?user=8VpEQr8AAAAJ" target="_blank"><i class="fa-brands fa-google-scholar"></i></a></li>
+      <li><a href="mailto:anilkunchalaece@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li> 
+      <!-- Add more links as needed -->
+    </ul>
+  </div>
+
+  <nav id="sidebar-nav-links">
+  
+    <a class="home-link "
+        href="/">Home</a>
+  
+  
+
+  
+
+  
+
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+
+  
+
+
+  
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/blog.html">Blog</a>
+    
+  
+
+  
+
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/projects.html">Projects</a>
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="category-link "
+          href="/category/travel.html">Travel</a>
+    
+  
+
+  
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+</nav>
+
+
+  
+
+  <nav id="sidebar-icon-links">
+  
+
+  <a id="subscribe-link"
+     class="icon" title="Subscribe" aria-label="Subscribe"
+     href="/feed.xml">
+    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+  </a>
+
+  
+  
+  
+  
+
+  
+    <a id="tags-link"
+       class="icon"
+       title="Tags" aria-label="Tags"
+       href="/tags.html">
+      <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+    </a>
+  
+
+  
+    <a id="search-link"
+       class="icon"
+       title="Search" aria-label="Search"
+       href="/search.html">
+      <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+    </a>
+  
+
+  <!-- Optional additional links to insert for icons links -->
+</nav>
+
+  <p>
+  &copy; Anil Kunchala
+</p>
+
+</div>
+
+<!-- Add some CSS to style the new profile section -->
+<style>
+  .profile-section {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 40%;
+  }
+  .profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  .profile-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .profile-title {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  .profile-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between the links */
+  }
+  .profile-links li {
+    margin: 0;
+  }
+  .profile-links a {
+    color: #007acc;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Arrange icon and text vertically */
+  }
+  .profile-links a:hover {
+    text-decoration: underline;
+  }
+  .profile-links i {
+    margin-bottom: 5px; /* Space between icon and text */
+  }
+</style>
+
+    <main class="container">
+      <header>
+  <h1 class="post-title">Fine-tuning Custom Object Detector Using Pytorch</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">06 May 2025</span>
+  <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        <a href="/category/blog.html">
+          Blog
+        </a>
+      
+    
+      &bull;
+
+      
+      
+      
+
+      
+        Computer-Vision
+      
+    
+  </span>
+</div>
+
+
+  <div class="post-body">
+    <p>In this post, I will describe how to fine-tune and pretrained object detector model using pytorch.</p>
+
+<h4 id="data-requirements">Data Requirements</h4>
+<p>For Object Detection Training and Test line, you Need</p>
+<ul>
+  <li>Images</li>
+  <li>No of Classes you want to detect in the images [One image may contain multiple classes]</li>
+  <li>Bounding Boxes of Each Object with in Image [These may have different formats based on annotation tool]</li>
+</ul>
+
+<h4 id="what-you-need-to-do">What You need to do</h4>
+<p>Most of the work you do can be split into 3 stages</p>
+<ol>
+  <li>Custom Dataset Class for your data</li>
+  <li>Model Modification</li>
+  <li>Train and Test Scripts</li>
+</ol>
+
+<h4 id="custom-dataset-class">Custom Dataset Class</h4>
+<ul>
+  <li>Create an custom dataset class (lets call it CustomDatasetClass) <strong>inherited</strong> from <code class="language-plaintext highlighter-rouge">torch.utils.data.dataset</code> class.</li>
+  <li>In the custom class create the following methods. These will be replaced in parent <code class="language-plaintext highlighter-rouge">torch.utils.data.datset</code> class
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">__getitem(self,idx)__</code>
+        <ul>
+          <li>This is used to get the each item for training and testing</li>
+          <li>Include the code to do any preprocessing for data - for ex, converting image and class labels to tensors</li>
+          <li><strong>For Object Detection</strong>
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">__getitem__</code> should return following
+                <ul>
+                  <li><strong>image :</strong> should be a tensor of shape [Channels, Height, Width]</li>
+                  <li><strong>targets :</strong> list of dictionary containing
+                    <ul>
+                      <li><em>boxes :</em> ground truth bounding boxes in <code class="language-plaintext highlighter-rouge">[x1,y1,x2,y2]</code> format</li>
+                      <li><em>labels :</em> class label for each bounding box</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">__len(self)__</code>
+        <ul>
+          <li>This is used to get the total number of samples in the dataset</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Once you create these two methods, we can use this class to load the dataset suitable for pytorch dataloader for both training and testing</p>
+
+<p>References</p>
+<ul>
+  <li><a href="https://docs.pytorch.org/tutorials/intermediate/torchvision_tutorial.html">https://docs.pytorch.org/tutorials/intermediate/torchvision_tutorial.html</a></li>
+  <li><a href="https://docs.pytorch.org/vision/stable/_modules/torchvision/models/detection/faster_rcnn.html#FasterRCNN_ResNet50_FPN_V2_Weights">https://docs.pytorch.org/vision/stable/_modules/torchvision/models/detection/faster_rcnn.html#FasterRCNN_ResNet50_FPN_V2_Weights</a></li>
+</ul>
+
+<h4 id="model-modifications">Model Modifications</h4>
+<p>Instead of creating model from scratch, We can use one of the pretrained models from pytorch and modify the number of classes in the classifier head to match our use case.</p>
+
+<p>Following is the comparision of easy to use pytorch models</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model Name</th>
+      <th>Backbone</th>
+      <th>Type</th>
+      <th>Speed</th>
+      <th>Accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fasterrcnn_resnet50_fpn</td>
+      <td>ResNet50 + FPN</td>
+      <td>Two Stage</td>
+      <td>Medium</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>fasterrcnn_mobilenet_v3_large_fpn</td>
+      <td>MobileNet + FPN</td>
+      <td>Two Stage</td>
+      <td>Fast</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>retinanet_resnet50_fpn</td>
+      <td>ResNet50 + FPN</td>
+      <td>One Stage</td>
+      <td>Fasterthan FastRCNN</td>
+      <td>Decent</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Faster RCNN</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">torchvision.models.detection.faster_rcnn</span> <span class="kn">import</span> <span class="n">FastRCNNPredictor</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">torchvision</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">detection</span><span class="p">.</span><span class="n">fasterrcnn_resnet50_fpn</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">in_features</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">roi_heads</span><span class="p">.</span><span class="n">box_predictor</span><span class="p">.</span><span class="n">cls_score</span><span class="p">.</span><span class="n">in_features</span>
+<span class="n">model</span><span class="p">.</span><span class="n">roi_heads</span><span class="p">.</span><span class="n">box_predictor</span> <span class="o">=</span> <span class="n">FastRCNNPredictor</span><span class="p">(</span><span class="n">in_features</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>MobileNet</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">torchvision.models.detection.faster_rcnn</span> <span class="kn">import</span> <span class="n">FastRCNNPredictor</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">torchvision</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">detection</span><span class="p">.</span><span class="n">fasterrcnn_mobilenet_v3_large_fpn</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">in_features</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">roi_heads</span><span class="p">.</span><span class="n">box_predictor</span><span class="p">.</span><span class="n">cls_score</span><span class="p">.</span><span class="n">in_features</span>
+<span class="n">model</span><span class="p">.</span><span class="n">roi_heads</span><span class="p">.</span><span class="n">box_predictor</span> <span class="o">=</span> <span class="n">FastRCNNPredictor</span><span class="p">(</span><span class="n">in_features</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>RetinaNet</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">torchvision.models.detection.retinanet</span> <span class="kn">import</span> <span class="n">RetinaNetClassificationHead</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">torchvision</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">detection</span><span class="p">.</span><span class="n">retinanet_resnet50_fpn</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">in_channels</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">classification_head</span><span class="p">.</span><span class="n">conv</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">in_channels</span>  <span class="c1"># usually 256
+</span><span class="n">num_anchors</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">classification_head</span><span class="p">.</span><span class="n">num_anchors</span>  <span class="c1"># usually 9
+</span>
+<span class="n">model</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">classification_head</span> <span class="o">=</span> <span class="n">RetinaNetClassificationHead</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_anchors</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+    
+
+
+
+<div class="post-tags">
+  
+</div>
+  </div>
+
+  
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/phd/publication/projects/2024/08/02/actor-centric-paper.html">
+            Actor-Centric Spatio-Temporal Feature Extraction for Action Recognition
+            <small>02 Aug 2024</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/phd/publication/projects/2024/02/19/privacy-framework-paper.html">
+            Towards A Framework for Privacy-Preserving Pedestrian Analysis
+            <small>19 Feb 2024</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/hiking/travel/2024/02/18/bray.html">
+            Bray To Graystones- Ireland
+            <small>18 Feb 2024</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
+</div>
+
+    </main>
+
+    <!-- Optional footer content -->
+
+  </body>
+</html>

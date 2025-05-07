@@ -1,4 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-10-02T07:46:15+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Anil Kunchala</title><subtitle>a &lt;i&gt; Tinkerers &lt;/i&gt; log about his experiments with few things he came across</subtitle><author><name>Anil Kunchala</name></author><entry><title type="html">Actor-Centric Spatio-Temporal Feature Extraction for Action Recognition</title><link href="http://localhost:4000/phd/publication/projects/2024/08/02/actor-centric-paper.html" rel="alternate" type="text/html" title="Actor-Centric Spatio-Temporal Feature Extraction for Action Recognition" /><published>2024-08-02T00:00:00+01:00</published><updated>2024-08-02T00:00:00+01:00</updated><id>http://localhost:4000/phd/publication/projects/2024/08/02/actor-centric-paper</id><content type="html" xml:base="http://localhost:4000/phd/publication/projects/2024/08/02/actor-centric-paper.html"><![CDATA[<h2 id="overview">Overview</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-05-07T20:31:54+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Anil Kunchala</title><subtitle>a &lt;i&gt; Tinkerers &lt;/i&gt; log about his experiments with few things he came across</subtitle><author><name>Anil Kunchala</name></author><entry><title type="html">Fine-tuning Custom Object Detector Using Pytorch</title><link href="http://localhost:4000/blog/computer-vision/2025/05/06/custom-object-train.html" rel="alternate" type="text/html" title="Fine-tuning Custom Object Detector Using Pytorch" /><published>2025-05-06T00:00:00+01:00</published><updated>2025-05-06T00:00:00+01:00</updated><id>http://localhost:4000/blog/computer-vision/2025/05/06/custom-object-train</id><content type="html" xml:base="http://localhost:4000/blog/computer-vision/2025/05/06/custom-object-train.html"><![CDATA[<p>In this post, I will describe how to fine-tune and pretrained object detector model using pytorch.</p>
+
+<h4 id="data-requirements">Data Requirements</h4>
+<p>For Object Detection Training and Test line, you Need</p>
+<ul>
+  <li>Images</li>
+  <li>No of Classes you want to detect in the images [One image may contain multiple classes]</li>
+  <li>Bounding Boxes of Each Object with in Image [These may have different formats based on annotation tool]</li>
+</ul>
+
+<h4 id="what-you-need-to-do">What You need to do</h4>
+<p>Most of the work you do can be split into 3 stages</p>
+<ol>
+  <li>Custom Dataset Class for your data</li>
+  <li>Model Modification</li>
+  <li>Train and Test Scripts</li>
+</ol>
+
+<h4 id="custom-dataset-class">Custom Dataset Class</h4>
+<ul>
+  <li>Create an custom dataset class (lets call it CustomDatasetClass) <strong>inherited</strong> from <code class="language-plaintext highlighter-rouge">torch.utils.data.dataset</code> class.</li>
+  <li>In the custom class create the following methods. These will be replaced in parent <code class="language-plaintext highlighter-rouge">torch.utils.data.datset</code> class
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">__getitem(self,idx)__</code>
+        <ul>
+          <li>This is used to get the each item for training and testing</li>
+          <li>Include the code to do any preprocessing for data - for ex, converting image and class labels to tensors</li>
+          <li><strong>For Object Detection</strong>
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">__getitem__</code> should return following
+                <ul>
+                  <li><strong>image :</strong> should be a tensor of shape [Channels, Height, Width]</li>
+                  <li><strong>targets :</strong> list of dictionary containing
+                    <ul>
+                      <li><em>boxes :</em> ground truth bounding boxes in <code class="language-plaintext highlighter-rouge">[x1,y1,x2,y2]</code> format</li>
+                      <li><em>labels :</em> class label for each bounding box</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">__len(self)__</code>
+        <ul>
+          <li>This is used to get the total number of samples in the dataset</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Once you create these two methods, we can use this class to load the dataset suitable for pytorch dataloader for both training and testing</p>
+
+<p>References</p>
+<ul>
+  <li><a href="https://docs.pytorch.org/tutorials/intermediate/torchvision_tutorial.html">https://docs.pytorch.org/tutorials/intermediate/torchvision_tutorial.html</a></li>
+  <li><a href="https://docs.pytorch.org/vision/stable/_modules/torchvision/models/detection/faster_rcnn.html#FasterRCNN_ResNet50_FPN_V2_Weights">https://docs.pytorch.org/vision/stable/_modules/torchvision/models/detection/faster_rcnn.html#FasterRCNN_ResNet50_FPN_V2_Weights</a></li>
+</ul>
+
+<h4 id="model-modifications">Model Modifications</h4>
+<p>Instead of creating model from scratch, We can use one of the pretrained models from pytorch and modify the number of classes in the classifier head to match our use case.</p>
+
+<p>Following is the comparision of easy to use pytorch models</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model Name</th>
+      <th>Backbone</th>
+      <th>Type</th>
+      <th>Speed</th>
+      <th>Accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fasterrcnn_resnet50_fpn</td>
+      <td>ResNet50 + FPN</td>
+      <td>Two Stage</td>
+      <td>Medium</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>fasterrcnn_mobilenet_v3_large_fpn</td>
+      <td>MobileNet + FPN</td>
+      <td>Two Stage</td>
+      <td>Fast</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>retinanet_resnet50_fpn</td>
+      <td>ResNet50 + FPN</td>
+      <td>One Stage</td>
+      <td>Fasterthan FastRCNN</td>
+      <td>Decent</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Faster RCNN</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">torchvision.models.detection.faster_rcnn</span> <span class="kn">import</span> <span class="n">FastRCNNPredictor</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">torchvision</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">detection</span><span class="p">.</span><span class="n">fasterrcnn_resnet50_fpn</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">in_features</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">roi_heads</span><span class="p">.</span><span class="n">box_predictor</span><span class="p">.</span><span class="n">cls_score</span><span class="p">.</span><span class="n">in_features</span>
+<span class="n">model</span><span class="p">.</span><span class="n">roi_heads</span><span class="p">.</span><span class="n">box_predictor</span> <span class="o">=</span> <span class="n">FastRCNNPredictor</span><span class="p">(</span><span class="n">in_features</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>MobileNet</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">torchvision.models.detection.faster_rcnn</span> <span class="kn">import</span> <span class="n">FastRCNNPredictor</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">torchvision</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">detection</span><span class="p">.</span><span class="n">fasterrcnn_mobilenet_v3_large_fpn</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">in_features</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">roi_heads</span><span class="p">.</span><span class="n">box_predictor</span><span class="p">.</span><span class="n">cls_score</span><span class="p">.</span><span class="n">in_features</span>
+<span class="n">model</span><span class="p">.</span><span class="n">roi_heads</span><span class="p">.</span><span class="n">box_predictor</span> <span class="o">=</span> <span class="n">FastRCNNPredictor</span><span class="p">(</span><span class="n">in_features</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>RetinaNet</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">torchvision.models.detection.retinanet</span> <span class="kn">import</span> <span class="n">RetinaNetClassificationHead</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">torchvision</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">detection</span><span class="p">.</span><span class="n">retinanet_resnet50_fpn</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">in_channels</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">classification_head</span><span class="p">.</span><span class="n">conv</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">in_channels</span>  <span class="c1"># usually 256
+</span><span class="n">num_anchors</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">classification_head</span><span class="p">.</span><span class="n">num_anchors</span>  <span class="c1"># usually 9
+</span>
+<span class="n">model</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">classification_head</span> <span class="o">=</span> <span class="n">RetinaNetClassificationHead</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_anchors</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+</code></pre></div></div>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Blog&quot;]" /><summary type="html"><![CDATA[Fine-Tuning Custom Object Detector using Pytorch]]></summary></entry><entry><title type="html">Actor-Centric Spatio-Temporal Feature Extraction for Action Recognition</title><link href="http://localhost:4000/phd/publication/projects/2024/08/02/actor-centric-paper.html" rel="alternate" type="text/html" title="Actor-Centric Spatio-Temporal Feature Extraction for Action Recognition" /><published>2024-08-02T00:00:00+01:00</published><updated>2024-08-02T00:00:00+01:00</updated><id>http://localhost:4000/phd/publication/projects/2024/08/02/actor-centric-paper</id><content type="html" xml:base="http://localhost:4000/phd/publication/projects/2024/08/02/actor-centric-paper.html"><![CDATA[<h2 id="overview">Overview</h2>
 <p><strong>Title:</strong> Actor-Centric Spatio-Temporal Feature Extraction for Action Recognition</p>
 
 <p><strong>Published in:</strong> 2023 International Conference on Computer Vision and Image Processing (CVIP 2023)</p>
@@ -116,7 +241,7 @@ image sequence.</li>
 
 <p>Few Snaps
 <img src="http://localhost:4000/assets/images/leinster/IMG_20220416_133145.jpg" alt="image" />
-<img src="http://localhost:4000/assets/images/leinster/IMG_20220416_133331.jpg" alt="image" /></p>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Travel&quot;]" /><summary type="html"><![CDATA[A Trip to Mount Leinster]]></summary></entry><entry><title type="html">Xnect - Installation and running demo</title><link href="http://localhost:4000/machine%20learning/2020/10/28/XNect-setup.html" rel="alternate" type="text/html" title="Xnect - Installation and running demo" /><published>2020-10-28T00:00:00+00:00</published><updated>2020-10-28T00:00:00+00:00</updated><id>http://localhost:4000/machine%20learning/2020/10/28/XNect-setup</id><content type="html" xml:base="http://localhost:4000/machine%20learning/2020/10/28/XNect-setup.html"><![CDATA[<p>In this Post I will show how to install <a href="https://gvv.mpi-inf.mpg.de/projects/XNect/">XNect</a> and Run the demo in C/C++ Library provided by xNect Team.</p>
+<img src="http://localhost:4000/assets/images/leinster/IMG_20220416_133331.jpg" alt="image" /></p>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Travel&quot;]" /><summary type="html"><![CDATA[A Trip to Mount Leinster]]></summary></entry><entry><title type="html">Xnect - Installation and running demo</title><link href="http://localhost:4000/projects/blog/2020/10/28/XNect-setup.html" rel="alternate" type="text/html" title="Xnect - Installation and running demo" /><published>2020-10-28T00:00:00+00:00</published><updated>2020-10-28T00:00:00+00:00</updated><id>http://localhost:4000/projects/blog/2020/10/28/XNect-setup</id><content type="html" xml:base="http://localhost:4000/projects/blog/2020/10/28/XNect-setup.html"><![CDATA[<p>In this Post I will show how to install <a href="https://gvv.mpi-inf.mpg.de/projects/XNect/">XNect</a> and Run the demo in C/C++ Library provided by xNect Team.</p>
 
 <p>In summary you need to install following dependencies</p>
 <ol>
@@ -279,14 +404,8 @@ make <span class="nt">-j</span><span class="si">$(</span><span class="nb">nproc<
   <li>I found a nice article about <a href="https://chunml.github.io/ChunML.github.io/project/Installing-Caffe-Ubuntu/">installing caffe in ubuntu</a>.</li>
   <li><a href="https://gist.github.com/diegopacheco/cd795d36e6ebcd2537cd18174865887b">Protobuf installation</a></li>
   <li><a href="https://www.boost.org/doc/libs/1_66_0/more/getting_started/unix-variants.html">Boost 1.58 Installation</a></li>
-</ol>]]></content><author><name>Anil Kunchala</name></author><category term="Machine Learning" /><category term="Machine Learning" /><summary type="html"><![CDATA[In this post I will explain how to setup XNect and run the demo provided in the example]]></summary></entry><entry><title type="html">Snowdonia - United Kingdom</title><link href="http://localhost:4000/hiking/travel/2019/10/15/snowdonia.html" rel="alternate" type="text/html" title="Snowdonia - United Kingdom" /><published>2019-10-15T00:00:00+01:00</published><updated>2019-10-15T00:00:00+01:00</updated><id>http://localhost:4000/hiking/travel/2019/10/15/snowdonia</id><content type="html" xml:base="http://localhost:4000/hiking/travel/2019/10/15/snowdonia.html"><![CDATA[<p>Few Snaps
+</ol>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Blog&quot;]" /><summary type="html"><![CDATA[In this post I will explain how to setup XNect and run the demo provided in the example]]></summary></entry><entry><title type="html">Snowdonia - United Kingdom</title><link href="http://localhost:4000/hiking/travel/2019/10/15/snowdonia.html" rel="alternate" type="text/html" title="Snowdonia - United Kingdom" /><published>2019-10-15T00:00:00+01:00</published><updated>2019-10-15T00:00:00+01:00</updated><id>http://localhost:4000/hiking/travel/2019/10/15/snowdonia</id><content type="html" xml:base="http://localhost:4000/hiking/travel/2019/10/15/snowdonia.html"><![CDATA[<p>Few Snaps
 <img src="http://localhost:4000/assets/images/snowden/IMG_20191130_102135.jpg" alt="image" />
 <img src="http://localhost:4000/assets/images/snowden/IMG_20191130_103008.jpg" alt="image" />
 <img src="http://localhost:4000/assets/images/snowden/IMG_20191130_103016.jpg" alt="image" />
-<img src="http://localhost:4000/assets/images/snowden/P_20191130_095925.jpg" alt="image" /></p>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Travel&quot;]" /><summary type="html"><![CDATA[Another Trip to Snowdonia National Park, Wales, United Kingdom]]></summary></entry><entry><title type="html">Snowdonia National Park - United Kingdom</title><link href="http://localhost:4000/hiking/travel/2019/08/15/snowdonia.html" rel="alternate" type="text/html" title="Snowdonia National Park - United Kingdom" /><published>2019-08-15T00:00:00+01:00</published><updated>2019-08-15T00:00:00+01:00</updated><id>http://localhost:4000/hiking/travel/2019/08/15/snowdonia</id><content type="html" xml:base="http://localhost:4000/hiking/travel/2019/08/15/snowdonia.html"><![CDATA[<p>Few Snaps
-<img src="http://localhost:4000/assets/images/snowdonia/IMG_20191019_134322.jpg" alt="image" />
-<img src="http://localhost:4000/assets/images/snowdonia/IMG_20191019_142235.jpg" alt="image" />
-<img src="http://localhost:4000/assets/images/snowdonia/IMG_20191019_142612.jpg" alt="image" />
-<img src="http://localhost:4000/assets/images/snowdonia/IMG_20191201_121543.jpg" alt="image" />
-<img src="http://localhost:4000/assets/images/snowdonia/IMG_20191201_152534.jpg" alt="image" />
-<img src="http://localhost:4000/assets/images/snowdonia/P_20191201_123738.jpg" alt="image" /></p>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Travel&quot;]" /><summary type="html"><![CDATA[A Trip to Snowdonia National Park, Wales, United Kingdom]]></summary></entry></feed>
+<img src="http://localhost:4000/assets/images/snowden/P_20191130_095925.jpg" alt="image" /></p>]]></content><author><name>Anil Kunchala</name></author><category term="[&quot;Travel&quot;]" /><summary type="html"><![CDATA[Another Trip to Snowdonia National Park, Wales, United Kingdom]]></summary></entry></feed>
